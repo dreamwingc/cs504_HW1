@@ -1,0 +1,7 @@
+spring:
+  application:
+    name: running-information-analysis-service
+  datasource:
+    url: jdbc:mysql://localhost:3306/cs504_runningInfo
+    username: root
+    password: mypassword
