@@ -31,7 +31,7 @@ public class RunningInformationServiceImpl implements RunningInformationService{
     }
 
     @Override
-    public Page<RunningInformation> deleteByRunningId(String runningId, Pageable pageable) {
-        return runningInformationRepository.deleteByRunningId(runningId, pageable);
+    public void deleteByRunningId(String runningId) {
+        runningInformationRepository.deleteByRunningId(runningId);
     }
 }

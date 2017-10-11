@@ -55,11 +55,6 @@ public class RunningInformation {
         this.userInfo = null;
     }
 
-    //@JsonCreator
-    //public Location(@JsonProperty("username") String username, @JsonProperty("address") String address){
-    //    this.userInfo = new UserInfo(username, address);
-    //}
-
     @JsonCreator
     public RunningInformation(@JsonProperty("userInfo") UserInfo userInfo){
         this.userInfo = userInfo;

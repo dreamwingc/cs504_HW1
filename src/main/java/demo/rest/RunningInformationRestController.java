@@ -27,12 +27,13 @@ public class RunningInformationRestController {
     }
 
     @RequestMapping(value = "/running", method = RequestMethod.GET)
-    public Page<RunningInformation> findAllByOrderByHealthWarningLevel(@RequestParam(name = "page") int page, @RequestParam(name = "size") int size){
+    public Page<RunningInformation> findAllByOrderByHealthWarningLevel(@RequestParam(name = "page", defaultValue = "0") int page,
+                                                                       @RequestParam(name = "size", defaultValue = "2") int size){
         return this.runningInformationService.findAllByOrderByHealthWarningLevel(new PageRequest(page, size));
     }
 
-    @RequestMapping(value = "/running/{runningId}", method = RequestMethod.GET)
-    public Page<RunningInformation> deleteByRunningId(@PathVariable String runningId, @RequestParam(name = "page") int page, @RequestParam(name = "size") int size){
-        return this.runningInformationService.deleteByRunningId(runningId,new PageRequest(page, size));
+    @RequestMapping(value = "/running/{runningId}", method = RequestMethod.DELETE)
+    void purge(@PathVariable String runningId){
+        this.runningInformationService.deleteByRunningId(runningId);
     }
 }
