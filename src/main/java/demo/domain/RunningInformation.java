@@ -48,8 +48,8 @@ public class RunningInformation {
     @JsonIgnore
     private double runningDistance;
 
-    //@JsonIgnore
-    //private Date timestamp = new Date();
+    @JsonIgnore
+    private Date timestamp = new Date();
 
     public RunningInformation(){
         this.userInfo = null;
